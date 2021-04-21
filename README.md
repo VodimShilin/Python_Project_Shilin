@@ -1,2 +1,0 @@
-Python project Clicker
-
