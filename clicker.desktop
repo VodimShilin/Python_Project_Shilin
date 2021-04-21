@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Cookie_Clicker
+Type=Application
+Path=/home/vadim/Python_Project_Shilin
+Terminal=false
+Exec=/home/vadim/Python_Project_Shilin/main.py
+Icon=/home/vadim/Python_Project_Shilin/cookie.png

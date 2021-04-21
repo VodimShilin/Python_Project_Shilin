@@ -1,3 +1,4 @@
+#!/bin/python3
 import inspect
 import os
 import sys
@@ -75,12 +76,12 @@ SHOP_WINDOW = sg.Window("Shop Menu", SHOP_LAYOUT, no_titlebar=True,
                         keep_on_top=False, grab_anywhere=True,
                         background_color=BK_SHOP_COLOR)
 
-MAIN_LAYOUT = [[sg.Text("TOTAL:", size=(10, 1), pad=((10, 0), 0),
+MAIN_LAYOUT = [[sg.Text("Total:", size=(10, 1), pad=((10, 0), 0),
                         font=('Helvetica', 20),
                         background_color=BK_NUMS_COLOR),
                 sg.Text('', size=(23, 1), font=('Helvetica', 20),
-                        justification='center', tooltip="You TOTAL coins",
-                        background_color=BK_NUMS_COLOR, key='TOTAL')],
+                        justification='center', tooltip="You total coins",
+                        background_color=BK_NUMS_COLOR, key='total')],
                [sg.Text("Per_sec:", size=(10, 1), pad=((10, 0), 0),
                         font=('Helvetica', 20),
                         background_color=BK_NUMS_COLOR,),
@@ -108,7 +109,7 @@ if __name__ == "__main__":
     PROFIT_PER_CLICK = int(10)
 
     MAIN_EVENT, MAIN_VALUES = MAIN_WINDOW.read(timeout=0)
-    MAIN_WINDOW['TOTAL'].update(f'{TOTAL}')
+    MAIN_WINDOW['total'].update(f'{TOTAL}')
     MAIN_WINDOW['per_sec'].update(f'{PROFIT_PER_SEC}')
     MAIN_WINDOW['per_click'].update(f'{PROFIT_PER_CLICK}')
 
@@ -164,7 +165,7 @@ if __name__ == "__main__":
                         PROFIT_PER_SEC += int(SHOP_VALUES[0][0])
                         TOTAL -= int(SHOP_VALUES[1][1])
                         PROFIT_PER_CLICK += int(SHOP_VALUES[1][0])
-                        MAIN_WINDOW['TOTAL'].update(f'{TOTAL}')
+                        MAIN_WINDOW['total'].update(f'{TOTAL}')
                         MAIN_WINDOW['per_sec'].update(f'{PROFIT_PER_SEC}')
                         MAIN_WINDOW['per_click'].update(f'{PROFIT_PER_CLICK}')
                 if SHOP_EVENT == '-Exit-':
@@ -174,7 +175,7 @@ if __name__ == "__main__":
                     break
 
         TOTAL += PROFIT_PER_SEC
-        MAIN_WINDOW['TOTAL'].update(f'{TOTAL}')
+        MAIN_WINDOW['total'].update(f'{TOTAL}')
         MAIN_WINDOW['per_sec'].update(f'{PROFIT_PER_SEC}')
         MAIN_WINDOW['per_click'].update(f'{PROFIT_PER_CLICK}')
 
